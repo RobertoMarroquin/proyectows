@@ -46,7 +46,7 @@ class Farmacia(models.Model):
         return self.idFarmacia
 
 
-class tipoDocumento(models.Model):
+class TipoDocumento(models.Model):
     idTipoDocumento = models.IntegerField(("idTipoDocumento"), primary_key=True)
     nombreDocumento = models.CharField(("nombreDocumento"), max_length=30)
     proveedor = models.ForeignKey('inventario.Proveedor', on_delete=models.CASCADE)
@@ -177,7 +177,7 @@ class Caja(models.Model):
     efectivoInicial = models.FloatField(("Efectivo Inicial"))
     estadoCaja = models.IntegerField(("Estado Caja"))
     farmacia = models.ForeignKey('inventario.Farmacia', on_delete=models.CASCADE)
-    models.OneToOneField("inventario.Usuario", verbose_name=("Caja"), on_delete=models.CASCADE)
+    usuario = models.OneToOneField("inventario.Usuario", verbose_name=("Caja"), on_delete=models.CASCADE)
 
     def __str__(self):
         return self.idCaja
