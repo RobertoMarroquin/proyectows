@@ -51,3 +51,5 @@ class RepartidorAPI(viewsets.ModelViewSet):
     queryset = Repartidor.objects.all()
     serializer_class = RepartidorSerializer
     permission_classes = [permissions.AllowAny]
+
+
